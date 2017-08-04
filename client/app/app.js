@@ -4,6 +4,9 @@ import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
 import 'normalize.css';
+import BOP from 'BOP';
+
+BOP.configure({publicPath: 'http://localhost:8080/'});
 
 angular.module('app', [
     uiRouter,

@@ -8,11 +8,17 @@ module.exports = {
   module: {
     loaders: [
        { test: /\.js$/, exclude: [/app\/lib/, /node_modules/], loader: 'ng-annotate!babel' },
+       
        { test: /\.html$/, loader: 'raw' },
        { test: /\.(scss|sass)$/, loader: 'style!css!sass' },
        { test: /\.css$/, loader: 'style!css' }
     ]
   },
+  externals: [{
+    react: 'React',
+    'react-dom': 'ReactDOM',
+    BOP: 'BOP'
+  }],
   plugins: [
     // Injects bundles in your index.html instead of wiring all manually.
     // It also adds hash to all injected assets so we don't have problems
